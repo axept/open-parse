@@ -3,7 +3,7 @@ Open Parse
 
 > Open Parse = [Parse.com](https://parse.com/docs/rest/guide) + [JSON API](http://jsonapi.org/format/) + [koa](https://github.com/koajs/koa)
 
-The collection of middleware which provides REST API interface for data and schema access, users and security management.
+The collection of middleware which provides REST API interface for accessing to application data and schema, users and security management.
 
 Built with love to [Functional Principles](https://drboolean.gitbooks.io/mostly-adequate-guide/content/) and.. yes, koa.
 
@@ -13,6 +13,13 @@ The following example has been written with using [promised-mongo](https://githu
 
 ```javascript
 const router = new Router();
+const dataRequired = function *(next) {
+  if (typeof this.request.body['data'] === 'object') {
+    yield next;
+  } else {
+    this.throw(400, 'Request data is required');
+  }
+};
 
 // Users API
 const users = {
