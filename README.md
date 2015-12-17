@@ -9,7 +9,11 @@
 
 The collection of middleware which provides extra-flexible RESTful API interface for accessing to application data store and schemas, users and security management. Save your time to bootstrap new web and mobile projects.
 
-Out of the box it supports:
+What is Parse in two words is BaaS (Backend as a Service). What is BaaS? It's easier to show:
+![BaaS](https://backendless.com/wp-content/uploads/2014/01/baas-apis.png)
+
+
+Out of the box **Open Parse** supports:
 
 * [bunyan-logger](https://github.com/trentm/node-bunyan) which could be connected to Logentries, Loggly, NewRelic and other cloud log management services just in a 15 seconds.
 
@@ -20,7 +24,7 @@ Built with love to [Functional Principles](https://drboolean.gitbooks.io/mostly-
 ## Content
 
 * [Basic usage](#basic-usage)
-* [How to connect a cloud log service](#how-to-connect-a-cloud-log-service)
+* [How to connect a Cloud Log Service?](#how-to-connect-a-cloud-log-service)
 * [Roadmap](#roadmap)
 
 
@@ -97,13 +101,13 @@ router.get('/schemas/:className', handleSchemaFetch(schemas));
 app.use('/api', router);
 ```
 
-### How to connect any cloud log service?
+## How To Connect a Cloud Log Service?
 
-It's really easy:
+It's really easy.
 
-#### Configure a logger
+### Did you initialize a logger?
 
-Only if you didn't initialize that in your application earlier.
+If you did not, do it right now:
 
 ```javascript 
 import bunyan from 'bunyan';
@@ -121,14 +125,12 @@ const logger = bunyan.createLogger({
 });
 ```
 
-# How To Connect a Cloud Log Service 
-
-Add just a one line of code:
+### Add a one line to your code
 
 ```javascript
 const users = {
   dataProvider: pmongo.collection('users'),
-  logger // this!
+  logger // THIS LINE!
 };
 router.post('/users', dataRequired, handleUserSignUp(users));
 router.get('/login', handleUserLogin(users));
@@ -137,6 +139,10 @@ router.get('/users/me', handleUserFetch(users));
 ```
 
 # Roadmap
+
+**Version 0.2**
+
+* Support access control layer (ACL)
 
 **Version 0.3**
 
