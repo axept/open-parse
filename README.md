@@ -1,5 +1,9 @@
-Open Parse
-==========
+# Open Parse
+
+[![NPM Version](https://img.shields.io/npm/v/open-parse.svg)](https://npmjs.org/package/open-parse)
+[![NPM Downloads](https://img.shields.io/npm/dm/open-parse.svg)](https://npmjs.org/package/open-parse)
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/StartupMakers/open-parse.svg)](http://isitmaintained.com/project/StartupMakers/open-parse "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/StartupMakers/open-parse.svg)](http://isitmaintained.com/project/StartupMakers/open-parse "Percentage of issues still open")
 
 > Open Parse = [Parse.com](https://parse.com/docs/rest/guide) + [JSON API](http://jsonapi.org/format/) + [koa](https://github.com/koajs/koa)
 
@@ -7,7 +11,7 @@ The collection of middleware which provides REST API interface for accessing to 
 
 Built with love to [Functional Principles](https://drboolean.gitbooks.io/mostly-adequate-guide/content/) and.. yes, koa.
 
-# Basic Usage
+## Basic Usage
 
 The following example has been written with using [promised-mongo](https://github.com/gordonmleigh/promised-mongo) and [koa-router](https://github.com/alexmingoia/koa-router) packages. 
 
