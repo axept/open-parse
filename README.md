@@ -7,7 +7,7 @@
 
 > Open Parse = [Parse.com](https://parse.com/docs/rest/guide) + [JSON API](http://jsonapi.org/format/) + [koa](https://github.com/koajs/koa)
 
-The collection of middleware which provides REST API interface for accessing to application data and schema, users and security management.
+The collection of middleware which provides extra-flexible RESTful API interface for accessing to application data store and schemas, users and security management. Save your time to bootstrap new web and mobile projects.
 
 Out of the box it supports [bunyan-logger](https://github.com/trentm/node-bunyan) which could be connected to Logentries, Loggly, NewRelic and other cloud log management services just in a 15 seconds.
 
@@ -15,8 +15,8 @@ Built with love to [Functional Principles](https://drboolean.gitbooks.io/mostly-
 
 ## Content
 
-* [Basic Usage](#basic-usage)
-* [How To Connect a Cloud Log Service](#how-to-connect-a-cloud-log-service)
+* [Basic usage](#basic-usage)
+* [How to connect a cloud log service](#how-to-connect-a-cloud-log-service)
 * [Roadmap](#roadmap)
 
 
