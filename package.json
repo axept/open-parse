@@ -1,0 +1,27 @@
+{
+  "name": "open-parse",
+  "version": "0.1.0",
+  "description": "The collection of middleware which provides REST API interface for data and schema access, users and security management.",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src --out-dir lib --source-maps",
+    "prepublish": "npm run build"
+  },
+  "license": "BSD-3-Clause",
+  "homepage": "https://github.com/StartupMakers/open-parse",
+  "bugs": "https://github.com/StartupMakers/open-parse/issues",
+  "files": [
+    "LICENSE",
+    "PATENTS",
+    "README.md",
+    "lib/"
+  ],
+  "engines": {
+    "node": "4.1.1",
+    "npm": "0.3.x"
+  },
+  "devDependencies": {
+    "babel": "^5.8.25",
+    "babel-core": "^5.8.25"
+  }
+}
