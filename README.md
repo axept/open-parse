@@ -47,7 +47,9 @@ const dataRequired = function *(next) {
 ### Bring up Users API
 ```javascript
 const users = {
-  dataProvider: pmongo.collection('users')
+  dataProvider: new UsersDataProvider({
+    collection: pmongo.collection('users')
+  })
 };
 router.post('/users', dataRequired, handleUserSignUp(users));
 router.get('/login', handleUserLogin(users));
@@ -91,7 +93,9 @@ For `ObjectsDataProvider` an initial cache should be specified as a `[className]
 
 ```javascript
 const schemas = {
-  dataProvider: pmongo.collection('schemas')
+  dataProvider: new SchemasDataProvider({
+    collection: pmongo.collection('schemas')
+  })
 };
 router.get('/schemas/:className', handleSchemaFetch(schemas));
 ```
@@ -129,7 +133,9 @@ const logger = bunyan.createLogger({
 
 ```javascript
 const users = {
-  dataProvider: pmongo.collection('users'),
+  dataProvider: new UsersDataProvider({
+    collection: pmongo.collection('users')
+  }),
   logger // THIS LINE!
 };
 router.post('/users', dataRequired, handleUserSignUp(users));
