@@ -9,7 +9,11 @@
 
 The collection of middleware which provides extra-flexible RESTful API interface for accessing to application data store and schemas, users and security management. Save your time to bootstrap new web and mobile projects.
 
-Out of the box it supports [bunyan-logger](https://github.com/trentm/node-bunyan) which could be connected to Logentries, Loggly, NewRelic and other cloud log management services just in a 15 seconds.
+Out of the box it supports:
+
+* [bunyan-logger](https://github.com/trentm/node-bunyan) which could be connected to Logentries, Loggly, NewRelic and other cloud log management services just in a 15 seconds.
+
+* [MongoDB](https://github.com/gordonmleigh/promised-mongo) for default data providers. But you could implement custom data providers for any other databases (it takes ~20 min). 
 
 Built with love to [Functional Principles](https://drboolean.gitbooks.io/mostly-adequate-guide/content/) and.. yes, koa.
 
