@@ -9,7 +9,7 @@
 
 The collection of middleware which provides extra-flexible RESTful API interface for accessing to application data store and schemas, users and security management. Save your time to bootstrap new web and mobile projects.
 
-Open Parse is open source BaaS (Backend as a Service). What is BaaS? See the schema below and focus on "Data Proccessing / Management" node:
+Open Parse is open source BaaS (Backend as a Service). See the schema below and focus on "Data Proccessing / Management" node. It is Open Parse.
 
 ![BaaS](https://backendless.com/wp-content/uploads/2014/01/baas-apis.png)
 
