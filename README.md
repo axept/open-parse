@@ -149,6 +149,7 @@ router.get('/users/me', handleUserFetch(users));
 **Version 0.2**
 
 * Support access control layer (ACL)
+* Add real world example
 
 **Version 0.3**
 
@@ -157,6 +158,7 @@ router.get('/users/me', handleUserFetch(users));
 
 **Version 0.4**
 
+* Add client SDK for JavaScript and React Native
 * Support files feature
 
 **Version 0.5**
