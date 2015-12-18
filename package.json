@@ -1,6 +1,6 @@
 {
   "name": "open-parse",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The collection of middleware which provides REST API interface for data and schema access, users and security management.",
   "main": "lib/index.js",
   "scripts": {
