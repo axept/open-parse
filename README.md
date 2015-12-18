@@ -13,21 +13,30 @@ Open Parse is open source BaaS (Backend as a Service). See the schema below and 
 
 ![BaaS](https://backendless.com/wp-content/uploads/2014/01/baas-apis.png)
 
-
 Out of the box **Open Parse** supports:
 
 * [bunyan-logger](https://github.com/trentm/node-bunyan) which could be connected to Logentries, Loggly, NewRelic and other cloud log management services just in a 15 seconds.
 
-* [MongoDB](https://github.com/gordonmleigh/promised-mongo) for default data providers. But you could implement custom data providers for any other databases (it takes ~20 min). 
+* [MongoDB](https://github.com/gordonmleigh/promised-mongo) as default data provider. But you could implement custom data providers for any other databases (it takes ~20 min). 
 
 Built with love to [Functional Principles](https://drboolean.gitbooks.io/mostly-adequate-guide/content/) and.. yes, koa.
 
 ## Content
 
+* [How it works?](#how-it-works)
 * [Basic usage](#basic-usage)
 * [How to connect a Cloud Log Service?](#how-to-connect-a-cloud-log-service)
 * [Roadmap](#roadmap)
 
+
+## How It Works?
+
+Open Parse is incredibly simple. It's just a glue which is connecting 2 pieces:
+
+* *Middleware* to get RESTful API end-point on your web server. It's implemented according to [JSON API](http://jsonapi.org/) specification.
+* *Data Providers* to work with any data storage (by default is MongoDB).
+
+You can extend any of those points.
 
 ## Basic Usage
 
@@ -155,6 +164,7 @@ router.get('/users/me', handleUserFetch(users));
 
 **Version 0.3**
 
+* Add Express middleware adapter
 * Support jobs feature
 * Support e-mail service
 
