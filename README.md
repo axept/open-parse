@@ -9,7 +9,8 @@
 
 The collection of middleware which provides extra-flexible RESTful API interface for accessing to application data store and schemas, users and security management. Save your time to bootstrap new web and mobile projects.
 
-What is Parse in two words is BaaS (Backend as a Service). What is BaaS? It's easier to show:
+Open Parse is open source BaaS (Backend as a Service). What is BaaS? See the schema below and focus on "Data Proccessing / Management" node:
+
 ![BaaS](https://backendless.com/wp-content/uploads/2014/01/baas-apis.png)
 
 
@@ -150,6 +151,7 @@ router.get('/users/me', handleUserFetch(users));
 
 * Support access control layer (ACL)
 * Add real world example
+* Improve the documentation and architecture schema
 
 **Version 0.3**
 
