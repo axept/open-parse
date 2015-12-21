@@ -26,6 +26,7 @@ Built with love to [Functional Principles](https://drboolean.gitbooks.io/mostly-
 * [How it works?](#how-it-works)
 * [Basic usage](#basic-usage)
 * [How to connect a Cloud Log Service?](#how-to-connect-a-cloud-log-service)
+* [Inspiration](#inspiration)
 * [Contribution](#contribution)
 * [Roadmap](#roadmap)
 
@@ -177,6 +178,14 @@ router.get('/login', handleUserLogin(users));
 router.post('/logout', handleUserLogout(users));
 router.get('/users/me', handleUserFetch(users));
 ```
+
+# Inspiration
+
+* [Parse.com](https://parse.com/docs/rest/guide) - Commercial Backend-as-a-Service platform
+* [BaasBox API](http://www.baasbox.com/documentation/?shell#api) - Java-based open source Backend-as-a-Service solution
+* [DeployD API](http://docs.deployd.com/api/) - first generation open source BaaS platform
+* [Sails.js](http://sailsjs.org/documentation/concepts/) - first generation MVC framework for Node.js
+* [Reindex.io](https://www.reindex.io/docs/) - Commercial BaaS platform with GraphQL API
 
 # Contribution
 
