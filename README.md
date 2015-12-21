@@ -159,24 +159,33 @@ router.get('/users/me', handleUserFetch(users));
 
 Are you ready to make the world better?
 
-1) Fork this repo
-2) Checkout forked repo:
+**1.** Fork this repo
+
+**2.** Checkout your repo:
+
 ```bash
 git clone git@github.com:YourAccount/open-parse.git
 ```
-2) Create your feature (or issue) branch:
+
+**3.** Create your feature (or issue) branch:
+ 
 ```bash
 git checkout -b my-new-feature
 ```
-3) Commit your changes:
+
+**4.** Commit your changes:
+
 ```bash
 git commit -am 'Add some changes'
 ```
-4) Push to the branch:
+
+**5.** Push to the branch:
+
 ```bash
 git push origin my-new-feature
 ```
-5) [Create new pull request](https://github.com/StartupMakers/open-parse/compare)
+
+**6.** [Create new pull request](https://github.com/StartupMakers/open-parse/compare)
 
 Thank you very much. Your support is greatly appreciated.
 
