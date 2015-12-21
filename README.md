@@ -26,6 +26,7 @@ Built with love to [Functional Principles](https://drboolean.gitbooks.io/mostly-
 * [How it works?](#how-it-works)
 * [Basic usage](#basic-usage)
 * [How to connect a Cloud Log Service?](#how-to-connect-a-cloud-log-service)
+* [Contribution](#contribution)
 * [Roadmap](#roadmap)
 
 
@@ -154,6 +155,31 @@ router.post('/logout', handleUserLogout(users));
 router.get('/users/me', handleUserFetch(users));
 ```
 
+# Contribution
+
+Are you ready to make the world better?
+
+1) Fork this repo
+2) Checkout forked repo:
+```bash
+git clone git@github.com:YourAccount/open-parse.git
+```
+2) Create your feature (or issue) branch:
+```bash
+git checkout -b my-new-feature
+```
+3) Commit your changes:
+```bash
+git commit -am 'Add some changes'
+```
+4) Push to the branch:
+```bash
+git push origin my-new-feature
+```
+5) [Create new pull request](https://github.com/StartupMakers/open-parse/compare)
+
+Thank you very much. Your support is greatly appreciated.
+
 # Roadmap
 
 **Version 0.2**
@@ -161,6 +187,7 @@ router.get('/users/me', handleUserFetch(users));
 * Support access control layer (ACL)
 * Add real world example
 * Improve the documentation and architecture schema
+* Add 'Access-Control-Allow-Origin' header
 
 **Version 0.3**
 
