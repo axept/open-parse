@@ -122,6 +122,7 @@ import koa from 'koa';
 import cors from 'kcors';
 import qs from 'koa-qs';
 import bodyParser from 'koa-bodyparser';
+import mount from 'koa-mount';
 
 // Create the server instance
 const app = koa();
@@ -129,8 +130,10 @@ app.use(cors());
 qs(app);
 app.use(bodyParser());
 
+// ...paste your routes here...
+
 // Connect API router
-app.use('/api', router);
+app.use(mount('/api', router));
 
 // Go LIVE
 app.listen(process.env['PORT'] || 3000);
