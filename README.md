@@ -43,9 +43,14 @@ You can extend any of those points.
 
 The following example has been written with using [promised-mongo](https://github.com/gordonmleigh/promised-mongo) and [koa-router](https://github.com/alexmingoia/koa-router) packages. 
 
-### Prepare new router and utils
+### Setup the environment
 ```javascript
+import Router from 'koa-router';
+import PMongo from 'promised-mongo';
+
 const router = new Router();
+const pmongo = new PMongo('localhost/my-app');
+
 const dataRequired = function *(next) {
   if (typeof this.request.body['data'] === 'object') {
     yield next;
@@ -113,7 +118,22 @@ router.get('/schemas/:className', handleSchemaFetch(schemas));
 
 ### Connect the router to your application
 ```javascript
+import koa from 'koa';
+import cors from 'kcors';
+import qs from 'koa-qs';
+import bodyParser from 'koa-bodyparser';
+
+// Create the server instance
+const app = koa();
+app.use(cors());
+qs(app);
+app.use(bodyParser());
+
+// Connect API router
 app.use('/api', router);
+
+// Go LIVE
+app.listen(process.env['PORT'] || 3000);
 ```
 
 ## How To Connect a Cloud Log Service?
