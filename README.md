@@ -24,8 +24,10 @@ Built with love to [Functional Principles](https://drboolean.gitbooks.io/mostly-
 ## Content
 
 * [How it works?](#how-it-works)
+* [Installation](#installation)
 * [Basic usage](#basic-usage)
-* [How to connect a Cloud Log Service?](#how-to-connect-a-cloud-log-service)
+* [FAQ](#faq)
+  + [How to connect a Cloud Log Service?](#how-to-connect-a-cloud-log-service)
 * [Inspiration](#inspiration)
 * [Contribution](#contribution)
 * [Roadmap](#roadmap)
@@ -40,6 +42,12 @@ Open Parse is incredibly simple. It's just a glue which is connecting 2 pieces:
 
 You can extend any of those points.
 
+## Installation
+
+```bash
+npm install --save open-parse
+```
+
 ## Basic Usage
 
 The following example has been written with using [promised-mongo](https://github.com/gordonmleigh/promised-mongo) and [koa-router](https://github.com/alexmingoia/koa-router) packages. 
@@ -47,10 +55,10 @@ The following example has been written with using [promised-mongo](https://githu
 ### Setup the environment
 ```javascript
 import Router from 'koa-router';
-import PMongo from 'promised-mongo';
+import pmongo from 'promised-mongo';
 
 const router = new Router();
-const pmongo = new PMongo('localhost/my-app');
+const db = new pmongo('localhost/my-app');
 
 const dataRequired = function *(next) {
   if (typeof this.request.body['data'] === 'object') {
@@ -65,7 +73,7 @@ const dataRequired = function *(next) {
 ```javascript
 const users = {
   dataProvider: new UsersDataProvider({
-    collection: pmongo.collection('users')
+    collection: db.collection('users')
   })
 };
 router.post('/users', dataRequired, handleUserSignUp(users));
@@ -81,7 +89,7 @@ In this example we're using a local data from JSON file.
 ```javascript
 const classes = {
   dataProvider: new ObjectsDataProvider({
-    collection: pmongo.collection('objects'),
+    collection: db.collection('objects'),
     initialCache: require('./cached-objects.json')
   }),
 };
@@ -111,7 +119,7 @@ For `ObjectsDataProvider` an initial cache should be specified as a `[className]
 ```javascript
 const schemas = {
   dataProvider: new SchemasDataProvider({
-    collection: pmongo.collection('schemas')
+    collection: db.collection('schemas')
   })
 };
 router.get('/schemas/:className', handleSchemaFetch(schemas));
@@ -140,13 +148,11 @@ app.use(mount('/api', router));
 app.listen(process.env['PORT'] || 3000);
 ```
 
-## How To Connect a Cloud Log Service?
+## FAQ
 
-It's really easy.
+### How To Connect a Cloud Log Service?
 
-### Did you initialize a logger?
-
-If you did not, do it right now:
+It's really easy. Did you initialize a logger? If you didn't, let's do it right now:
 
 ```javascript 
 import bunyan from 'bunyan';
@@ -164,12 +170,12 @@ const logger = bunyan.createLogger({
 });
 ```
 
-### Add a one line to your code
+Add just a one line to your code
 
 ```javascript
 const users = {
   dataProvider: new UsersDataProvider({
-    collection: pmongo.collection('users')
+    collection: db.collection('users')
   }),
   logger // THIS LINE!
 };
@@ -178,6 +184,8 @@ router.get('/login', handleUserLogin(users));
 router.post('/logout', handleUserLogout(users));
 router.get('/users/me', handleUserFetch(users));
 ```
+
+That's all. You will get a messages (about login, logout and fetching the data about users) in your Logentries account.
 
 # Inspiration
 
