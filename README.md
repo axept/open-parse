@@ -126,6 +126,7 @@ router.get('/schemas/:className', handleSchemaFetch(schemas));
 ```
 
 ### Connect the router to your application
+
 ```javascript
 import koa from 'koa';
 import cors from 'kcors';
@@ -146,6 +147,36 @@ app.use(mount('/api', router));
 
 // Go LIVE
 app.listen(process.env['PORT'] || 3000);
+```
+
+### Work with Open Parse API from the browser or mobile apps
+
+For example how to implement login in your browser scripts when you have connected Open Parse:
+
+```javascript
+const login = (email, password) => {
+  const query =
+    'email=' + encodeURIComponent(email)
+    + '&password=' + encodeURIComponent(password);
+  fetch('/api/login?' + query, {
+    method: 'GET',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    credentials: 'same-origin'
+  }).then((response) => response.json()).then((body) => {
+    if (body['data']) {
+      const userId = body['data']['id'];
+      const userName = body['data']['attributes']['name'];
+      console.log('Logged as user %s (%s)', userName, userId);
+    } else {
+      body['errors'].forEach(error =>
+        console.error('Auth error: %s (%s)', error['title'], error['source']['parameter'])
+      );
+    }
+  });
+};
 ```
 
 ## FAQ
