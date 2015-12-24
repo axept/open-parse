@@ -155,10 +155,11 @@ For example how to implement login in your browser scripts when you have connect
 
 ```javascript
 const login = (email, password) => {
-  const query =
-    'email=' + encodeURIComponent(email)
+  const loginURL =
+    '/api/login'
+    + '?email=' + encodeURIComponent(email)
     + '&password=' + encodeURIComponent(password);
-  fetch('/api/login?' + query, {
+  fetch(loginURL, {
     method: 'GET',
     headers: {
       'Accept': 'application/json',
