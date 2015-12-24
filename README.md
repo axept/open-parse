@@ -160,10 +160,8 @@ const login = (email, password) => {
     + '?email=' + encodeURIComponent(email)
     + '&password=' + encodeURIComponent(password);
   fetch(loginURL, {
-    method: 'GET',
     headers: {
       'Accept': 'application/json',
-      'Content-Type': 'application/json'
     },
     credentials: 'same-origin'
   }).then((response) => response.json()).then((body) => {
