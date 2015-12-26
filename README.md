@@ -224,6 +224,7 @@ That's all. You will get a messages (about login, logout and fetching the data a
 * [DeployD API](http://docs.deployd.com/api/) - first generation open source BaaS platform
 * [Sails.js](http://sailsjs.org/documentation/concepts/) - first generation MVC framework for Node.js
 * [Reindex.io](https://www.reindex.io/docs/) - Commercial BaaS platform with GraphQL API
+* [Serverless](https://github.com/serverless/serverless) - Hmm?
 
 # Contribution
 
