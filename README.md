@@ -226,6 +226,8 @@ That's all. You will get a messages (about login, logout and fetching the data a
 * [Reindex.io](https://www.reindex.io/docs/) - Commercial BaaS platform with GraphQL API
 * [Serverless](https://github.com/serverless/serverless) - Hmm?
 
+Would you like get some features from solutions above? [Ask me](https://github.com/StartupMakers/open-parse/issues/new) or create a Pull Request.
+
 # Contribution
 
 Are you ready to make the world better?
